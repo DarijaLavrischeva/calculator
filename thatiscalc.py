@@ -84,6 +84,9 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(740, 80, 21, 31))
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(100, 20, 500, 30))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -92,7 +95,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Lavrischeva Darija 4 course 4 group Calculator", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Calculator", None))
         self.eqButton.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.r_num3.setText("")
         self.znak2.setItemText(0, QCoreApplication.translate("MainWindow", u"+", None))
@@ -115,5 +118,7 @@ class Ui_MainWindow(object):
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"(", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u")", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Лаврищева Дарья Константиновна, 4 курс, 4 группа, 2022", None))
+
     # retranslateUi
 
