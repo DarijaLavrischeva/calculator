@@ -92,7 +92,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"hello attempt", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Lavrischeva Darija 4 course 4 group Calculator", None))
         self.eqButton.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.r_num3.setText("")
         self.znak2.setItemText(0, QCoreApplication.translate("MainWindow", u"+", None))
