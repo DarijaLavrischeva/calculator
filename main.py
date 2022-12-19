@@ -19,8 +19,8 @@ class Calculator(QMainWindow):
         self.ui.setupUi(self)
         self.ui.eqButton.clicked.connect(self.calculate)
         self.ui.butBuhg.clicked.connect(self.buhgeq)
-        #self.ui.butMath.clicked.connect(self.matheq)
-        #self.ui.butUsec.clicked.connect(self.cutoff)
+        self.ui.butMath.clicked.connect(self.matheq)
+        self.ui.butUsec.clicked.connect(self.cutoff)
 
     def calculate(self):
         inperrflag = False
@@ -180,16 +180,18 @@ class Calculator(QMainWindow):
 
         befeq = self.ui.rezLabel1.text()
 
-        if befeq[0].isdigit():
+        if (befeq[0].isdigit() or befeq[0]=='-'):
 
-            lpart = Decimal(befeq.partition('.')[0])
+            lpart = befeq.partition('.')[0]
+            lpart = Decimal(lpart.replace(' ', ''))
             rpart = befeq.partition('.')[2]
             if rpart == '':
                 rpartpart = 0
             else:
                 rpartpart = int(rpart[0])
-                if (int(rpart[1])>= 5 and rpartpart == 5):
-                    rpartpart = 6
+                if (rpartpart == 5 and int(rpart)>10):
+                    if(int(rpart[1]) >= 5):
+                        rpartpart = 6
 
 
             rez = 0
@@ -216,9 +218,10 @@ class Calculator(QMainWindow):
     def matheq(self):
         befeq = self.ui.rezLabel1.text()
 
-        if befeq[0].isdigit():
+        if (befeq[0].isdigit() or befeq[0]=='-'):
 
-            lpart = Decimal(befeq.partition('.')[0])
+            lpart = befeq.partition('.')[0]
+            lpart = Decimal(lpart.replace(' ', ''))
             rpart = befeq.partition('.')[2]
             if rpart == '':
                 rpartpart = 0
@@ -237,12 +240,14 @@ class Calculator(QMainWindow):
         else:
             self.ui.rezLabel2.setText('you already have error')
 
+
     def cutoff(self):
         befeq = self.ui.rezLabel1.text()
 
-        if befeq[0].isdigit():
+        if (befeq[0].isdigit() or befeq[0]=='-'):
 
-            lpart = Decimal(befeq.partition('.')[0])
+            lpart = befeq.partition('.')[0]
+            lpart = Decimal(lpart.replace(' ', ''))
 
             rez = lpart
 
